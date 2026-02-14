@@ -2,39 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/heart-icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/cake-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>Will you be my Valentine?</title>
+    <title>🎂 Happy Birthday! 🎉</title>
 
-    <meta property="og:title" content="Will you be my Valentine? 🌹" />
-    <meta property="og:description" content="I made something special for you." />
-    <meta property="og:image" content="/valentine-thumbnail.png" />
+    <meta property="og:title" content="🎂 A Special Birthday Surprise!" />
+    <meta property="og:description" content="I made something special for your birthday! 🎈" />
+    <meta property="og:image" content="/birthday-thumbnail.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
       body {
         margin: 0;
         padding: 0;
-        background-color: #fff5f5; /* Soft pinkish white */
+        background: linear-gradient(135deg, #FFF9E6 0%, #FFE5B4 50%, #FFD6E8 100%); /* Warm birthday gradient */
         font-family: 'Quicksand', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         overflow: hidden;
       }
       #root {
         width: 100%;
-        max-width: 500px;
-        text-align: center;
+        height: 100vh;
+      }
+      
+      /* Loading spinner */
+      .loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .loading::after {
+        content: "🎂";
+        font-size: 4rem;
+        animation: bounce 1s infinite;
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
       }
     </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading"></div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
