@@ -808,7 +808,7 @@ const MessageStep = ({ message, currentStep, totalSteps, onNext, isLastMessage }
   <motion.div {...ANIMATION_VARIANTS.message} className="z-10 text-center max-w-xl">
     <div className="bg-white/90 backdrop-blur-md p-12 rounded-3xl shadow-xl relative overflow-hidden">
       <p className="text-2xl md:text-4xl font-['Great_Vibes'] text-gray-800 mb-10">{message}</p>
-      <button onClick={onNext} className="bg-red-500 text-white px-10 py-4 rounded-full font-bold">{isLastMessage ? "Ready?" : "Next →"}</button>
+      <button onClick={onNext} className="bg-red-500 text-white px-10 py-4 rounded-full font-bold cursor-pointer">{isLastMessage ? "Ready?" : "Next →"}</button>
     </div>
   </motion.div>
 );
@@ -906,7 +906,7 @@ const ValentineCard = ({ defaultMessages = DEFAULT_MESSAGES, defaultImage = DEFA
   const handleYes = () => { setStep(personalizedMessages.length + 1); triggerConfetti(); if (onComplete) onComplete(); };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-red-100 flex items-center justify-center p-4 overflow-hidden relative">
+    <div className="min-h-screen bg-linear-to-br from-pink-100 to-red-100 flex items-center justify-center p-4 overflow-hidden relative">
       {showConfetti && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"><ConfettiExplosion {...CONFETTI_CONFIG} /></div>}
       <FloatingHearts />
       <AnimatePresence mode="wait">
